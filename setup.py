@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "lookerapiutil"
-VERSION = "1.0.4"
+VERSION = "1.0.5"
 # To install the library, run the following
 #
 # python setup.py install
