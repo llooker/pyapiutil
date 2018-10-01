@@ -4,9 +4,9 @@ import urllib
 import six
 
 if six.PY2:
-    from urlparse import urlparse
+    import urllib as urllib
 elif six.PY3:
-    from urllib.parse import urlparse
+    import urllib.parse as urllib
 
 class lookerapiutil:
     def __init__(self, host='',client_id='',client_secret=''):
@@ -37,7 +37,8 @@ class lookerapiutil:
             user_id = self.whoami().id
         scheduleplan = looker.ScheduledPlanApi(self.client)
         # filters_string = '?' + urllib.parse.urlencode(filters)
-        filters_string = '?' + urlparse.urlencode(filters)
+        filters_string = '?' + urllib.urlencode(filters) #urlparse.urlencode(filters)
+            
         config = {
                     "enabled": True,
                     "name": name,
